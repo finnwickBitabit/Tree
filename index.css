@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Nature/Earthy Palette */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Leaf Green Primary */
+  --primary: 142 76% 36%;
+  --primary-foreground: 144 80% 98%;
+
+  /* Soft Earth/Sand Backgrounds */
+  --background: 60 20% 97%;
+  --foreground: 150 10% 15%;
+
+  /* Card/Surface Colors - slightly warmer white */
+  --card: 0 0% 100%;
+  --card-foreground: 150 10% 15%;
+
+  /* Subtle Borders */
+  --border: 140 20% 88%;
+  --input: 140 20% 90%;
+  --ring: 142 76% 36%;
+
+  /* Secondary / Muted - Mossy/Sage tones */
+  --secondary: 140 30% 94%;
+  --secondary-foreground: 142 60% 25%;
+
+  --muted: 140 20% 96%;
+  --muted-foreground: 145 10% 45%;
+
+  /* Accent - Golden Sunlight / Flower */
+  --accent: 45 90% 60%;
+  --accent-foreground: 45 90% 10%;
+
+  /* Destructive - Earthy Red/Rust */
+  --destructive: 0 70% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --radius: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-family: var(--font-body);
+    background-image: radial-gradient(circle at top right, hsl(140 40% 92% / 0.5), transparent 40%),
+                      radial-gradient(circle at bottom left, hsl(60 30% 90% / 0.5), transparent 40%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
